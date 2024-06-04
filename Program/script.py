@@ -1,4 +1,5 @@
 from pynput.mouse import Button, Controller
+from pynput.keyboard import Button, Controller
 from time import sleep
 
 mouse = Controller()
@@ -26,3 +27,18 @@ while mouse.position != pos:
         y = 1
     
     mouse.move(x ,y)
+
+
+keyboard = Controller()
+
+with keyboard.pressed(Key.home):
+    keyboard.press('r')
+    keyboard.release('r')
+
+keyboard.type('cmd')
+keyboard.pressed(Key.enter)
+sleep(3)
+keyboard.type('c:/')
+keyboard.pressed(Key.enter)
+keyboard.type('tree')
+keyboard.pressed(Key.enter)
