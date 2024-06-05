@@ -71,6 +71,24 @@ def runScript():
     keyboard.release(Key.enter)
 
 
+
+    #Rick Rolled
+    with keyboard.pressed(Key.cmd):
+        keyboard.press('r')
+        keyboard.release('r')
+    sleep(0.5)
+    keyboard.type('cmd')
+    keyboard.press(Key.enter)
+    keyboard.release(Key.enter)
+    sleep(0.5)
+    keyboard.type('c:/PlasticEater/rilldocker.bat')
+    keyboard.press(Key.enter)
+    keyboard.release(Key.enter)
+    sleep(0.5)
+
+
+
+
 #Execute Mutli task
 if __name__ == "__main__":
     p1 = Process(target = FixMouse)
