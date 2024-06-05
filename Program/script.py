@@ -6,7 +6,7 @@ import pyautogui
 
 mouse = mouseController()
 screenWidth, screenHeight = pyautogui.size()
-pos = (screenWidth / 1.3, screenHeight / 1.3)
+pos = (int(screenWidth / 1.3), int(screenHeight / 1.3))
 posCoord = str(pos).replace('(', '').replace(')', '').replace(' ', '').split(',')
 posCoord[0] = int(posCoord[0])
 posCoord[1] = int(posCoord[1])
