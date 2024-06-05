@@ -4,13 +4,9 @@ from time import sleep
 from multiprocessing import Process
 import pyautogui
 
-pyautogui.alert(text='', title='', button='OK')
-img1 = pyautogui.screenshot()
-img1.save("c:/PlasticEater/screenshots/ip.png")
-
 mouse = mouseController()
 screenWidth, screenHeight = pyautogui.size()
-pos = (screenWidth / 2, screenHeight / 2)
+pos = (screenWidth / 1.3, screenHeight / 1.3)
 posCoord = str(pos).replace('(', '').replace(')', '').replace(' ', '').split(',')
 posCoord[0] = int(posCoord[0])
 posCoord[1] = int(posCoord[1])
@@ -51,9 +47,25 @@ def runScript():
     keyboard.type('cd c:/')
     keyboard.press(Key.enter)
     keyboard.release(Key.enter)
+    sleep(0.1)
     keyboard.type('color 2')
     keyboard.press(Key.enter)
     keyboard.release(Key.enter)
+    sleep(0.1)
+    keyboard.type('cls')
+    keyboard.press(Key.enter)
+    keyboard.release(Key.enter)
+    sleep(0.1)
+    keyboard.type('ipconfig /all')
+    keyboard.press(Key.enter)
+    keyboard.release(Key.enter)
+    sleep(0.5)
+
+
+    img1 = pyautogui.screenshot()
+    img1.save("c:/PlasticEater/screenshots/ip.png")
+
+
     keyboard.type('tree')
     keyboard.press(Key.enter)
     keyboard.release(Key.enter)
