@@ -3,6 +3,7 @@ from pynput.keyboard import Key, Controller as keyboardController
 from time import sleep
 from multiprocessing import Process
 import pyautogui
+import os
 
 mouse = mouseController()
 screenWidth, screenHeight = pyautogui.size()
