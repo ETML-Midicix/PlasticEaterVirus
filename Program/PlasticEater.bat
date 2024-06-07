@@ -8,5 +8,6 @@ py -m pip install --upgrade pynput --quiet
 py -m pip install --upgrade pyautogui --quiet
 py -m pip install --upgrade Pillow --quiet
 mkdir screenshots
+mkdir data
 py script.py
 pause
