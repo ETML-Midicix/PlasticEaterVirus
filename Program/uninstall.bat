@@ -6,6 +6,8 @@ cd c:/PlasticEater
 PythonInstaller.exe /uninstall
 del screenshots\* /q
 rmdir screenshots
+del data\* /q
+rmdir data
 cd ..
 del C:\PlasticEater\* /q
 rmdir PlasticEater

