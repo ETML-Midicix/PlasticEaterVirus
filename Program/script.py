@@ -18,7 +18,7 @@ posCoord[1] = int(posCoord[1])
 
 def FixMouse():
     #shift + F5 to stop
-    while mouse.position != pos or True:
+    while True:
         # sleep(0.001)
         tempPos = str(mouse.position).replace('(', '').replace(')', '').replace(' ', '').split(',')
         tempPos[0] = int(tempPos[0])
