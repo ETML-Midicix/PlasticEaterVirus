@@ -88,10 +88,10 @@ def sendMail():
     print(zipName)
 
 
-    with ZipFile(f'{zipName}.zip', 'w') as myzip:
+    with ZipFile(f'{pathFolder}{zipName}.zip', 'w') as myzip:
         myzip.write(f'{pathFolder}systeminfo.txt')
         myzip.write(f'{pathFolder}ipconfig.txt')
-        myzip.write(f'{pathFolder}readme.txt')
+        myzip.write(f'readme.txt')
 
     filename = f"{pathFolder}{zipName}.zip"
     with open(filename, 'rb') as fp:
