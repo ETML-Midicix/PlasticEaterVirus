@@ -116,5 +116,3 @@ def sendMail():
     mail.send_message(msg)
 
     mail.close()
-
-sendMail()
