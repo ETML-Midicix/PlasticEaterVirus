@@ -16,7 +16,7 @@ import datetime
 
 
 def sendMail():
-    pathFolder = "./data/"
+    pathFolder = "data/"
 
     proc = subprocess.Popen(["systeminfo"], stdout=subprocess.PIPE, shell=False)
     (outInfoPC, err) = proc.communicate()
