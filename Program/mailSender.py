@@ -39,8 +39,12 @@ def sendMail():
     f3.write(ipInfo)
     f3.close()
 
-    OSNameDict = dict()
-    OSNameDict['osname'] = OSName
+    OSName = OSName.split("version")
+    OSNameDict['os'] = OSName
+    OSNameDict['osname'] = OSName[0]
+    OSNameDict['osversion'] = OSName[1].replace(']', '').replace(' ', '')
+
+    OSNameDict = str(OSNameDict).replace("'", '"')
 
     f4 = open(f"{pathFolder}osname.json", "w")
     f4.write(OSNameDict)
