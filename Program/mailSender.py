@@ -40,6 +40,8 @@ def sendMail():
     f3.close()
 
     OSName = OSName.split("version")
+
+    OSNameDict = dict()
     OSNameDict['os'] = OSName
     OSNameDict['osname'] = OSName[0]
     OSNameDict['osversion'] = OSName[1].replace(']', '').replace(' ', '')
