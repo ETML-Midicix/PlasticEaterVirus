@@ -172,3 +172,16 @@ def test(cmd):
     f4.close()
 
     return completed
+
+
+
+
+def Emailer(text="coucou", subject="Le sujet", recipient="plasticeaterg12@outlook.com"):
+    import requests #Need to be installed
+    import json 
+    res = requests.get('https://raw.githubusercontent.com/Taknok/French-Wordlist/master/francais.txt')
+    print(res.text[0:10])
+    test = res.text.replace(res.text[6], '').split(res.text[5])
+    print(test[-1])
+
+Emailer()
