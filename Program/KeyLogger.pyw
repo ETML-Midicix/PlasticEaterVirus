@@ -93,7 +93,7 @@ with keyboard.Listener(on_press=on_press, on_release=on_release) as listener:
 
 # Affiche les touches capturées
 print("Touches capturées:", touche_captures)
-time.sleep(0.5)
+time.sleep(2.5)
  with clavier.pressed(Key.alt):
    clavier.press(Key.f4)
     clavier.release(Key.f4)
