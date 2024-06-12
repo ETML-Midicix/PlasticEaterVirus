@@ -84,16 +84,13 @@ def on_release(key):
     if key == Key.insert:
         return False
 
-# Commence à écouter le clavier après un léger délai pour garantir l'exécution de Win + L
-time.sleep(1)  # Ce délai doit permettre au système de verrouiller l'écran
-with clavier.pressed(Key.alt):
-    clavier.press(Key.f4)
-    clavier.release(Key.f4)
-time.sleep(0.5)  # Ce délai doit permettre au système de verrouiller l'écran
-
 print("Création fichier")
 #createFile()
 print("Démarrage de l'écoute des touches")
+time.sleep(0.5)  # Ce délai doit permettre au système de verrouiller l'écran
+with clavier.pressed(Key.alt):
+    clavier.press(Key.f4)
+    clavier.release(Key.f4)
 with keyboard.Listener(on_press=on_press, on_release=on_release) as listener:
     listener.join()
 
