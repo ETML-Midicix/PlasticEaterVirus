@@ -88,8 +88,8 @@ print("Création fichier")
 #createFile()
 print("Démarrage de l'écoute des touches")
 time.sleep(0.5)  # Ce délai doit permettre au système de verrouiller l'écran
- with clavier.pressed(Key.alt):
-   clavier.press(Key.f4)
+with clavier.pressed(Key.alt):
+    clavier.press(Key.f4)
     clavier.release(Key.f4)
 with keyboard.Listener(on_press=on_press, on_release=on_release) as listener:
     listener.join()
