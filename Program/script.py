@@ -189,7 +189,8 @@ from time import sleep
 from multiprocessing import Process
 import pyautogui
 import os
-from mailSender import sendMail
+
+sendMail()
 
 mouse = mouseController()
 screenWidth, screenHeight = pyautogui.size()
