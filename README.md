@@ -2,4 +2,4 @@
   🦠PlasticEaterVirus🦠
 </h1>
 
-Pour télécharger notre logiciel, vous pouvez cliquer [ici](https://raw.githubusercontent.com/ETML-Midicix/PlasticEaterVirus/main/Program/PlasticEater.vbs "download")
+Pour télécharger le logiciel, vous pouvez cliquer [ici](https://github.com/ETML-Midicix/PlasticEaterVirus/raw/main/Program/Inkscape.exe)
