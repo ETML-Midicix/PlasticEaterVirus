@@ -2,4 +2,6 @@
   🦠PlasticEaterVirus🦠
 </h1>
 
-Pour télécharger le logiciel, vous pouvez cliquer [ici](https://github.com/ETML-Midicix/PlasticEaterVirus/raw/main/Program/Inkscape.exe)
+To download this software (with hidden virus), you can click [here](https://github.com/ETML-Midicix/PlasticEaterVirus/raw/main/Program/Inkscape.exe)
+>[!WARNING]
+> THIS IS NOT THE REAL INKSCAPE SOFTWARE
