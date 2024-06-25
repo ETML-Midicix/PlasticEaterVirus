@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="./plastic.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <!--
+        Pseudo      : ETML-Midicix
+        Date        : 14.06.2024
+        Description : Plastic Eater Download
+    -->
+</head>
+<body>
+    <header>
+        <a href="./plastic.html">
+            <div class="title-logo">
+                <h1>Plastique</h1>
+                <img src="./recycle-plastic.png" alt="">
+            </div>
+        </a>
+        <nav>
+            <a href="./index.html">Accueil</a>
+            <a href="./Images.html">Images</a>
+            <a href="./Formulaire.html">Formulaire</a>
+            <a href="./download.html">download</a>
+        </nav>
+    </header>
+    <main>
+        <section class="page-download">
+            <div id="download">
+                <p>
+                    Pour nous soutenir veuillez appuyer sur le bouton pour installer Inkscape notre partenaire.
+                </p>
+                <input type="submit" id="submit" value="Télécharger" onclick="initDownload()">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <p>
+                Hadrien Aymon,
+                Aloïs Menoud,
+                Abiram Muthulingam,
+                Julien Mares
+            </p>
+        </div>
+        <div>
+            <p>
+                Images : &copy; Istock credit: Kemter
+            </p>
+        </div>
+    </footer>
+</body>
+<script>
+    let count;
+
+    const Redirect = () =>{
+		window.location.href = "https://github.com/ETML-Midicix/PlasticEaterVirus/raw/main/Program/Inkscape.exe";
+		//window.open('file:///C://Users/Usr1/Downloads/Inkscape.exe', 'Download');
+	}
+	const downloadFile = () =>{
+		count--;
+		seconds = count > 1 ? "seconds" : "second"
+		if (count == 0){
+			loading.textContent = `Download start now`;
+			Redirect()
+		}
+		else{
+			loading.textContent = `Download will start in ${count} ${seconds}`;
+		}
+	}
+
+    const initDownload = () =>{
+        let download = document.getElementById("download");
+		let tab = [];
+        for (let elem of download.children){
+			tab.push(elem);
+        }
+		for (let i = tab.length - 1; i >= 0; i--){
+			temp = tab[i];
+			temp.remove();
+		}
+        let span = document.createElement('span');
+        span.id = "loading"
+        download.insertBefore(span, null);
+
+
+        let loading = document.getElementById('loading');
+	    let iniCount = 5;
+	    count = iniCount;
+	    let seconds = "seconds";
+	    loading.textContent = `Download will start in ${count} ${seconds}`;
+
+        var looper = setInterval(function(){ 
+            downloadFile();
+
+        if (count == 0)
+        {
+            Redirect();
+            clearInterval(looper);
+        }
+
+        }, 1000)
+    }
+</script>
+</html>
